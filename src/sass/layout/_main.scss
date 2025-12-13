@@ -1,0 +1,26 @@
+@use '../abstracts';
+
+.main {
+    margin-bottom: 7.5rem;
+
+    &__header {
+        margin-bottom: 2rem;
+    }
+
+    &__gallery {
+
+        img {
+            margin-bottom: .8rem;
+        }
+
+        &--text {
+            color: abstracts.$white;
+            padding: 3rem 1.5rem;
+            background-color: abstracts.$black;
+
+            h2 {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}

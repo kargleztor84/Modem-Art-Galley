@@ -1,3 +1,27 @@
+@use '../abstracts';
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+
+footer {
+    color: abstracts.$white;
+    background-color: abstracts.$black;
+    
+    .container {
+        padding: 3rem 2rem;
+
+        h4 {
+            margin-bottom: 2.38rem;
+        }
+
+        p {
+            margin-bottom: 2.38rem;
+        }
+
+        a+a {
+            margin-left: 1.25rem;
+        }
+    }
+    
+}
