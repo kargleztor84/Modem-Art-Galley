@@ -9,7 +9,7 @@
 
     .header__img {
         margin-bottom: 2rem;
-        .header__img--big {
+        &--big {
             display: none;
         }
     }
@@ -34,11 +34,11 @@
         justify-content: center;
         align-items: center;
         .header__img {
-            .header__img--small {
+            &--small {
                 display: none;
             }
 
-            .header__img--big {
+            &--big {
                 display: initial;
             }
             
@@ -58,8 +58,8 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas: 
-        'uno dos tres';
-        background-image: linear-gradient(to right, abstracts.$black 50%, abstracts.$white 50%);
+        '. dos tres';
+        background-image: linear-gradient(to right, abstracts.$black 33.3%, abstracts.$white 33.3%);
 
         .header__img {
             grid-area: dos;
@@ -67,17 +67,12 @@
 
             &--big {
                 display: flex;
-                align-items: stretch;
-                
             }
         }
         
         .container {
             grid-area: tres;
             margin: 0;
-
         }
-
-
     }
 }
