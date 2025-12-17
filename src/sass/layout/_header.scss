@@ -52,4 +52,32 @@
             }
         }
     }
+
+    @include abstracts.responsive(large) {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        'uno dos tres';
+        background-image: linear-gradient(to right, abstracts.$black 50%, abstracts.$white 50%);
+
+        .header__img {
+            grid-area: dos;
+            margin: 0;
+
+            &--big {
+                display: flex;
+                align-items: stretch;
+                
+            }
+        }
+        
+        .container {
+            grid-area: tres;
+            margin: 0;
+
+        }
+
+
+    }
 }
