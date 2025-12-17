@@ -56,9 +56,10 @@
     @include abstracts.responsive(large) {
         position: relative;
         display: grid;
+        justify-items: center;
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas: 
-        '. dos tres';
+        '. dos .';
         background-image: linear-gradient(to right, abstracts.$black 33.3%, abstracts.$white 33.3%);
 
         .header__img {
@@ -71,8 +72,26 @@
         }
         
         .container {
-            grid-area: tres;
             margin: 0;
+            padding: 0;
+            position: absolute;
+            display: grid;
+            justify-items: end;
+            grid-template-columns: 1fr 1fr;
+
+            .container__h1 {
+                color: white;
+                justify-self: start;
+            }
+
+            .header__btn {
+                grid-column: 2 / span 1
+            }
+
+            p {
+                width: 64%;
+                // margin-left: 50px;
+            }
         }
     }
 }
