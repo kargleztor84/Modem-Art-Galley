@@ -1,30 +1,42 @@
 @use '../abstracts';
+@use '../base/helpers';
 
+// --- HEADER ---
 .header__location {
-    display: flex;
     &--btn {
         @include abstracts.dinamic-btn('before', end);
         position: absolute;
         top: 0;
     }
 
+    img {
+        display: flex;
+    }
+
+    // --- Viata tablet del header ---
     @include abstracts.responsive(medium) {
         &--btn {
             margin-left: 3rem;
         }
     }
+
+    // --- Vista desktop del header ---
+    @include abstracts.responsive(xl) {
+        &--btn {
+            margin-left: 156px;
+        }
+    }
 }
 
+// --- MAIN ---
 .main__location {
-    
     background-color: abstracts.$black;
     color: abstracts.$white;
-    padding-top: 2rem;
+    padding-top: 50px;
     padding-bottom: 2.25rem;
 
     h2 {
-        padding-bottom: 1rem;
-        font-size: 3rem;
+        @extend .style-h2;
     }
 
     h3 {
@@ -40,32 +52,47 @@
         margin-bottom: 1.25rem;
     }
 
+    // --- Vista tablet del main ---
     @include abstracts.responsive(medium) {
         padding-top: 4rem;
-        padding-inline: 2.5rem;
+        padding-inline: 2rem;
 
         .container {
             display: flex;
             gap: 6rem;
-
-            h2 {
-                line-height: 2.8rem;
-            }
             
             p:last-of-type {
-                // width: 84%;
                 margin-bottom: 2rem;
             }
         }
     }
+
+    // --- Vista desktop del main ---
+    @include abstracts.responsive(xl) {
+        .container {
+
+            justify-content: space-between;
+            h2 {
+                width: 350px;
+                font-size: abstracts.$H-l;
+                line-height: abstracts.$line-l;
+            }
+
+            div {
+                width: 420px;
+            }
+
+        }
+    }
 }
 
+// --- FOOTER ---
 .footer__location {
 
     background-color: abstracts.$orange;
+    padding: 48px 10px;
 
     .container {
-        padding: 3rem 2rem;
 
         h4 {
             font-size: 1.6rem;
@@ -85,6 +112,7 @@
             margin-left: 1rem;
         }
 
+        // --- Vista tablet del footer ---
         @include abstracts.responsive(medium) {
             display: flex;
             align-items: baseline;
@@ -103,6 +131,14 @@
             nav {
                 text-align: end;
                 flex: 1;
+            }
+        }
+
+        // --- Vista desktop del footer ---
+        @include abstracts.responsive(xl) {
+            p{
+                flex: initial;
+                width: 400px;
             }
         }
     }

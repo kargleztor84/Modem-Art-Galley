@@ -10,13 +10,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header class="header__location">
         <a href="../index.html" class="header__location--btn">
             BACK TO HOME
         </a>
 
-        <img src="../img/Maps-mobil.jpg" alt="Imagen de mapa" class="location__img">
+        <picture class="location__location--img">
+            <source media="(1440px <= width)" srcset="../img/maps-desktop.jpg">
+            <source media="(768px <= width)" srcset="../img/maps-tablet.jpg">
+            <img src="../img/maps-mobil.jpg" alt="Imagen de mapa" class="location__location--img__dinamic">
+        </picture>
     </header>
 
     <main class="main__location">

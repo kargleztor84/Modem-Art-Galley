@@ -4,20 +4,18 @@
 .main {
     margin-bottom: 7.5rem;
 
-    // ------ main__header ------
+    // --- main__header ---
     &__header {
 
-        img {
-            margin-bottom: 1.5rem;
-        }
-
         h2 {
-            @extend .style-h2
+            @extend .style-h2;
+            white-space-collapse: preserve-breaks;
+            margin-bottom: 30px;
         }
 
         margin-bottom: 2rem;
 
-        // Vista tablet del main__header
+        // --- Vista tablet del main__header ---
         @include abstracts.responsive(medium) {
 
             margin-bottom: .8rem;
@@ -39,16 +37,40 @@
                 width: 80%;
                 grid-area: text;
                 align-self: center;
-                margin-top: 1rem;
+
+                h2 {
+                    width: 223px;
+                }
 
                 p{
                     width: 95%;
                 }
             }
         }
+
+        // --- Vista desktop del main__header ---
+        @include abstracts.responsive(xl) {
+            margin-bottom: 30px;
+
+            .main__header--text {
+
+                h2 {
+                    white-space: initial;
+                    width: 350px;
+                    font-size: abstracts.$H-m;
+                    line-height: 60px;
+                }
+
+                p {
+                    width: 343px;
+                    font-size: abstracts.$text-body-m;
+                    line-height: abstracts.$lineM;
+                }
+            }
+        }
     }
 
-    // ------ main__gallery ------
+    // --- main__gallery ---
     &__gallery {
 
         img {
@@ -65,7 +87,7 @@
             }
         }
 
-        // VIsta tablet del main__gallery
+        // --- VIsta tablet del main__gallery ---
         @include abstracts.responsive(medium) {
             display: grid;
             grid-template-columns: 1.8fr 1fr;
@@ -89,6 +111,26 @@
 
             img {
                 margin: 0;
+            }
+        }
+
+        // --- VIsta desktop del main__gallery ---
+        @include abstracts.responsive(xl) {
+            grid-template-rows: 1fr 1fr;
+            gap: 30px;
+
+            &--text {
+                padding: 50px;
+
+                h2 {
+                    font-size: abstracts.$H-m;
+                    line-height: 60px;
+                }
+
+                p {
+                    font-size: abstracts.$text-body-m;
+                    line-height: abstracts.$lineM;
+                }
             }
         }
     }

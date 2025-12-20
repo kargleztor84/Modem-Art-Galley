@@ -4,6 +4,7 @@
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
 
+// --- Footer ---
 .footer__home {
     color: abstracts.$white;
     background-color: abstracts.$black;
@@ -18,16 +19,14 @@
         }
 
         p {
-            font-size: 1rem;
-            font-weight: 200;
-            line-height: 1.625rem;
-            margin-bottom: 2.38rem;
+            margin-bottom: 38px;
         }
 
         a+a {
             margin-left: 1rem;
         }
 
+        // --- Vista tablet del footer ---
         @include abstracts.responsive(medium) {
             display: flex;
             align-items: baseline;
@@ -40,13 +39,22 @@
 
             p {
                 flex: 1.5;
-                margin-bottom: 1px;
             }
 
             nav {
                 text-align: end;
                 flex: 1;
             }
+        }
+
+        //  ---Vista desktop del footer ---
+        @include abstracts.responsive(xl) {
+
+            p {
+                flex: initial;
+                width: 430px;
+            }
+
         }
     } 
 }
